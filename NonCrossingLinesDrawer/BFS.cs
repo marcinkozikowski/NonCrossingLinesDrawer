@@ -2,16 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using static NonCrossingLinesDrawer.Constants;
 
 namespace NonCrossingLinesDrawer
 {
-    class BFS
+    public class BFS
     {
-        public const int INF = int.MinValue;
-        public const int NONODESBEFORE = -1;
-        public const int NOVISITED = -2;
-        public const int VISITED = 1;
-
         private int nodeNumber = 0;
         public int[,] list;
         private int StartPoint;
@@ -46,13 +42,13 @@ namespace NonCrossingLinesDrawer
                 currentNode = BfsQueue.Dequeue();   //take first node from queu
                 if (currentNode > -1)
                 {
-                    for (int i = 0; i < 25; i++)
+                    for (int i = 0; i < nodeNumber; i++)
                     {
                         if (list[currentNode, i] == 1)
                         {
                             var nodeNumber = i;
                             //Node n = list[currentNode][i] as Node;
-                            if ((PathHelp[3, nodeNumber] == NOVISITED))
+                            if ((PathHelp[3, nodeNumber] == NOTVISITED))
                             {
                                 BfsQueue.Enqueue(nodeNumber);
                                 PathHelp[3, nodeNumber] = VISITED;
@@ -117,7 +113,7 @@ namespace NonCrossingLinesDrawer
                     }
                     else if (i == 3)
                     {
-                        helpTable[i, j] = NOVISITED;
+                        helpTable[i, j] = NOTVISITED;
                     }
                 }
             }
