@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NonCrossingLinesDrawer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid ShowGridLines="True" Name="mainGrid">
+        Title="NonCrossingLineDrawer" Height="800" Width="800">
+    <Grid Name="mainGrid">
     </Grid>
 </Window>

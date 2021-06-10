@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,11 +11,14 @@ namespace NonCrossingLinesDrawer
     public partial class MainWindow : Window
     {
         int selectedPoints = 0;
+        int firstPoint = -1;
+        int secondPoint = -1;
+        AdjacencyMatrix pixelsAdjacency;
         public MainWindow()
         {
             InitializeComponent();
 
-            for(int i=0;i<5;i++)
+            for(int i=0;i<20;i++)
             {
                 var row = new RowDefinition();
 
@@ -22,7 +27,7 @@ namespace NonCrossingLinesDrawer
                 mainGrid.RowDefinitions.Add(row);
                 mainGrid.ColumnDefinitions.Add(column);
 
-                for (int j=0;j<5;j++)
+                for (int j=0;j<20;j++)
                 {
                     var canvas = new Canvas();
                     canvas.Background = new SolidColorBrush(Colors.White);
@@ -37,56 +42,90 @@ namespace NonCrossingLinesDrawer
                 }
             }
 
-            AdjacencyMatrix pixelsAdjacency = new AdjacencyMatrix(5);
+            pixelsAdjacency = new AdjacencyMatrix(20);
             var matrix = pixelsAdjacency.Matrix;
-
-            var bfs = new BFS(18, matrix);
-            bfs.getBFSPath();
-            var path = bfs.getBFSPathToPointR(6, new List<int>());
-            //List<int> path = bfs.getShortestBFSPath(6);
-            //textBlock.Text = pixelsAdjacency.PrintMatrixAsString();
-
-            //Po narysowaniu linni nalezy usunac wszelki powiazania do punktow ktore wchodza w sklad linni z matrixa
-            pixelsAdjacency.RemoveAdjacency(path);
-
-            var bfs2 = new BFS(4, pixelsAdjacency.Matrix);
-            bfs2.getBFSPath();
-            var path2 = bfs2.getBFSPathToPointR(16, new List<int>());
-
-            pixelsAdjacency.RemoveAdjacency(path2);
-
-            var bfs3 = new BFS(21, pixelsAdjacency.Matrix);
-            bfs3.getBFSPath();
-            var path3 = bfs3.getBFSPathToPointR(23, new List<int>());
-
-            pixelsAdjacency.RemoveAdjacency(path3);
-
-            var bfs4 = new BFS(9, pixelsAdjacency.Matrix);
-            bfs4.getBFSPath();
-            var path4 = bfs4.getBFSPathToPointR(15, new List<int>());
-            //List<int> path2 = bfs2.getShortestBFSPath(16);
 
             //rysowanie kolejnej linni wymaga nowego przeszukania bfs z nowym matrixem
         }
 
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
         {
-            (sender as Canvas).Background = new SolidColorBrush(Colors.White);
+            //(sender as Canvas).Background = new SolidColorBrush(Colors.White);
         }
 
         private void Canvas_MouseEnter(object sender, MouseEventArgs e)
         {
-            (sender as Canvas).Background = new SolidColorBrush(Colors.LightGray);
+            //(sender as Canvas).Background = new SolidColorBrush(Colors.LightGray);
         }
 
         private void mainGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (selectedPoints < 1)
+            {
+               
                 Canvas _btn = sender as Canvas;
 
                 int _row = (int)_btn.GetValue(Grid.RowProperty);
                 int _column = (int)_btn.GetValue(Grid.ColumnProperty);
 
+                firstPoint = _row * 20 + _column;
+
                 _btn.Background = new SolidColorBrush(Colors.LightGray);
+                selectedPoints += 1;
+            }
+            else if (firstPoint!=-1 && selectedPoints < 2)
+            {
+
+                Canvas _btn = sender as Canvas;
+
+                int _row = (int)_btn.GetValue(Grid.RowProperty);
+                int _column = (int)_btn.GetValue(Grid.ColumnProperty);
+
+                secondPoint = _row * 20 + _column;
+
+                _btn.Background = new SolidColorBrush(Colors.LightGray);
+                selectedPoints += 1;
+
+                if (selectedPoints == 2)
+                {
+                    try
+                    {
+                        var bfs2 = new BFS(firstPoint, pixelsAdjacency.Matrix);
+                        bfs2.getBFSPath();
+                        var path2 = bfs2.getBFSPathToPointR(secondPoint, new List<int>());
+                        DrawLine(path2);
+
+                        pixelsAdjacency.RemoveAdjacency(path2);
+
+                        secondPoint = -1;
+                        firstPoint = -1;
+                        selectedPoints = 0;
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.ToString());
+                        selectedPoints = 0;
+                        firstPoint = -1;
+                        secondPoint = -1;
+                    }
+                }
+            }
+        }
+
+        private void DrawLine(IEnumerable<int> linePath)
+        {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            var color = Color.FromRgb((byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255));
+
+            foreach (var point in linePath)
+            {
+                int i = point % 20;
+                int j = point / 20;
+
+                var pixel = mainGrid.Children.OfType<Canvas>().FirstOrDefault(e => Grid.GetColumn(e) == i && Grid.GetRow(e) == j);
+
+                pixel.Background = new SolidColorBrush(color) ;
+            }
         }
     }
 }

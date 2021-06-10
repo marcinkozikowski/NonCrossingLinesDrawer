@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marci\\source\\repos\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj": {}
+    "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marci\\source\\repos\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj": {
+    "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marci\\source\\repos\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj",
+        "projectUniqueName": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj",
         "projectName": "NonCrossingLinesDrawerTests",
-        "projectPath": "C:\\Users\\marci\\source\\repos\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj",
+        "projectPath": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\NonCrossingLinesDrawerTests.csproj",
         "packagesPath": "C:\\Users\\marci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marci\\source\\repos\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\obj\\",
+        "outputPath": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawerTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
