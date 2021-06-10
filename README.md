@@ -12,3 +12,8 @@ The idea behind this problem is to follow the steps:
 * in order to draw another line, algotyhm have to remove all points included in the previous line, so that the new drawn line will not cross the already drawn lines
 
 If there is no way to draw line beetwen selected points, user will get such infromation in MessageBox.
+
+## Example video
+<div align="center">
+<a href="https://www.youtube.com/watch?v=EDCqrdFl9tA"><img src="https://img.youtube.com/vi/EDCqrdFl9tA/0.jpg" alt="NonCrossingLinesDrawer Example Video"></a>
+</div>
