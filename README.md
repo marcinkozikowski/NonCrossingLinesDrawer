@@ -17,3 +17,9 @@ If there is no way to draw line beetwen selected points, user will get such infr
 <div align="center">
 <a href="https://www.youtube.com/watch?v=EDCqrdFl9tA"><img src="https://img.youtube.com/vi/EDCqrdFl9tA/0.jpg" alt="NonCrossingLinesDrawer Example Video"></a>
 </div>
+
+## Helpful pages
+
+* https://docs.microsoft.com/en-us/dotnet/desktop/wpf/?view=netdesktop-5.0 - WPF documentation
+* https://en.wikipedia.org/wiki/Breadth-first_search - general informations about BFS algorythm and pseudocode
+* https://github.com/marcinkozikowski/ShortestPath_Dijkstry - my previous university project with BFS and Dijkstry implementations
