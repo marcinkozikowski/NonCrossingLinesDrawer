@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonCrossingLinesDrawer", "NonCrossingLinesDrawer\NonCrossingLinesDrawer.csproj", "{9CF9FF2C-7706-44F0-B3AF-3CC189802798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonCrossingLinesDrawerTests", "NonCrossingLinesDrawerTests\NonCrossingLinesDrawerTests.csproj", "{66D5180F-062E-4D4C-8ED5-E0ADA7BD48A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF9FF2C-7706-44F0-B3AF-3CC189802798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF9FF2C-7706-44F0-B3AF-3CC189802798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF9FF2C-7706-44F0-B3AF-3CC189802798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF9FF2C-7706-44F0-B3AF-3CC189802798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D5180F-062E-4D4C-8ED5-E0ADA7BD48A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D5180F-062E-4D4C-8ED5-E0ADA7BD48A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D5180F-062E-4D4C-8ED5-E0ADA7BD48A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D5180F-062E-4D4C-8ED5-E0ADA7BD48A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45753BCF-1D66-4A4A-8EEC-D95A0097C9A7}
+	EndGlobalSection
+EndGlobal
