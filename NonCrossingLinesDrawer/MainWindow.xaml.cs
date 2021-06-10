@@ -13,12 +13,14 @@ namespace NonCrossingLinesDrawer
         int selectedPoints = 0;
         int firstPoint = -1;
         int secondPoint = -1;
+        int size = 80;
+
         AdjacencyMatrix pixelsAdjacency;
         public MainWindow()
         {
             InitializeComponent();
 
-            for(int i=0;i<20;i++)
+            for(int i=0;i<size;i++)
             {
                 var row = new RowDefinition();
 
@@ -27,7 +29,7 @@ namespace NonCrossingLinesDrawer
                 mainGrid.RowDefinitions.Add(row);
                 mainGrid.ColumnDefinitions.Add(column);
 
-                for (int j=0;j<20;j++)
+                for (int j=0;j<size;j++)
                 {
                     var canvas = new Canvas();
                     canvas.Background = new SolidColorBrush(Colors.White);
@@ -42,7 +44,7 @@ namespace NonCrossingLinesDrawer
                 }
             }
 
-            pixelsAdjacency = new AdjacencyMatrix(20);
+            pixelsAdjacency = new AdjacencyMatrix(size);
             var matrix = pixelsAdjacency.Matrix;
 
             //rysowanie kolejnej linni wymaga nowego przeszukania bfs z nowym matrixem
@@ -68,9 +70,16 @@ namespace NonCrossingLinesDrawer
                 int _row = (int)_btn.GetValue(Grid.RowProperty);
                 int _column = (int)_btn.GetValue(Grid.ColumnProperty);
 
-                firstPoint = _row * 20 + _column;
+                firstPoint = _row * size + _column;
 
-                _btn.Background = new SolidColorBrush(Colors.LightGray);
+                lineWidthLabel.Content = string.Empty;
+                lineColor.Background = new SolidColorBrush(Colors.Transparent);
+                firstPointLabel.Content = string.Empty;
+                secondPointLabel.Content = string.Empty;
+
+                firstPointLabel.Content = firstPoint;
+
+                //_btn.Background = new SolidColorBrush(Colors.LightGray);
                 selectedPoints += 1;
             }
             else if (firstPoint!=-1 && selectedPoints < 2)
@@ -81,19 +90,21 @@ namespace NonCrossingLinesDrawer
                 int _row = (int)_btn.GetValue(Grid.RowProperty);
                 int _column = (int)_btn.GetValue(Grid.ColumnProperty);
 
-                secondPoint = _row * 20 + _column;
+                secondPoint = _row * size + _column;
+                secondPointLabel.Content = secondPoint;
 
-                _btn.Background = new SolidColorBrush(Colors.LightGray);
+                //_btn.Background = new SolidColorBrush(Colors.LightGray);
                 selectedPoints += 1;
 
                 if (selectedPoints == 2)
                 {
                     try
                     {
-                        var bfs2 = new BFS(firstPoint, pixelsAdjacency.Matrix);
+                        var bfs2 = new BreadthPathFinder(firstPoint, pixelsAdjacency.Matrix);
                         bfs2.getBFSPath();
-                        var path2 = bfs2.getBFSPathToPointR(secondPoint, new List<int>());
+                        var path2 = bfs2.RecreatePathToPoint(secondPoint, new List<int>());
                         DrawLine(path2);
+                        lineWidthLabel.Content = $"{path2.Count} points";
 
                         pixelsAdjacency.RemoveAdjacency(path2);
 
@@ -103,10 +114,15 @@ namespace NonCrossingLinesDrawer
                     }
                     catch (Exception exp)
                     {
-                        MessageBox.Show(exp.ToString());
+                        MessageBox.Show($"You can not draw a line between {firstPoint} and {secondPoint} points in such a way that it does not intersect the currently drawn lines","Can not draw line",MessageBoxButton.OK,MessageBoxImage.Information);
                         selectedPoints = 0;
                         firstPoint = -1;
                         secondPoint = -1;
+
+                        lineWidthLabel.Content = string.Empty;
+                        lineColor.Background = new SolidColorBrush(Colors.Transparent);
+                        firstPointLabel.Content = string.Empty;
+                        secondPointLabel.Content = string.Empty;
                     }
                 }
             }
@@ -116,11 +132,11 @@ namespace NonCrossingLinesDrawer
         {
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
             var color = Color.FromRgb((byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255));
-
+            lineColor.Background = new SolidColorBrush(color);
             foreach (var point in linePath)
             {
-                int i = point % 20;
-                int j = point / 20;
+                int i = point % size;
+                int j = point / size;
 
                 var pixel = mainGrid.Children.OfType<Canvas>().FirstOrDefault(e => Grid.GetColumn(e) == i && Grid.GetRow(e) == j);
 
