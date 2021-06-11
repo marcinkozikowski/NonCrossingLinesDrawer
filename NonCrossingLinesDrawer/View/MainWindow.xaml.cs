@@ -101,7 +101,7 @@ namespace NonCrossingLinesDrawer
                     try
                     {
                         var bfs2 = new BreadthPathFinder(firstPoint, pixelsAdjacency.Matrix);
-                        bfs2.getBFSPath();
+                        bfs2.GetBFSPath();
                         var path2 = bfs2.RecreatePathToPoint(secondPoint, new List<int>());
                         DrawLine(path2);
                         lineWidthLabel.Content = $"{path2.Count} points";
@@ -114,7 +114,7 @@ namespace NonCrossingLinesDrawer
                     }
                     catch (Exception exp)
                     {
-                        MessageBox.Show($"You can not draw a line between {firstPoint} and {secondPoint} points in such a way that it does not intersect the currently drawn lines","Can not draw line",MessageBoxButton.OK,MessageBoxImage.Information);
+                        MessageBox.Show(ErrorMessages.CantDrawLine(firstPoint,secondPoint),"Can not draw line",MessageBoxButton.OK,MessageBoxImage.Information);
                         selectedPoints = 0;
                         firstPoint = -1;
                         secondPoint = -1;
