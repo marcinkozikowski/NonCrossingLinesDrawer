@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using NonCrossingLinesDrawer.Interfaces;
 
 namespace NonCrossingLinesDrawer
 {
-    internal class AdjacencyMatrix
+    internal class AdjacencyMatrix : IAdjacencyMatrix
     {
         private readonly int _matrixSize;
         private readonly int _pointsCount;

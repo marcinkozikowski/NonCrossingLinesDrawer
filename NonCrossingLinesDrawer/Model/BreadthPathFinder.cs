@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NonCrossingLinesDrawer.Interfaces;
 using static NonCrossingLinesDrawer.PointRelation;
 
 namespace NonCrossingLinesDrawer
 {
-    public class BreadthPathFinder
+    public class BreadthPathFinder : IBreadthPathFinder
     {
         private readonly int _pointstCount = 0;
         private readonly int[,] _adjacencyList;

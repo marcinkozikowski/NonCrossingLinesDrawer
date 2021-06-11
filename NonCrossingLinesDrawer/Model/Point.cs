@@ -1,17 +1,13 @@
+using NonCrossingLinesDrawer.Interfaces;
+
 namespace NonCrossingLinesDrawer
 {
-    public class Point
+    public class Point : IPoint
     {
-        /// <summary>
-        /// X cooridante stands for columns in matrix
-        /// </summary>
         public int X { get;}
-        
-        /// <summary>
-        /// Y coordinate stands for row in matrix
-        /// </summary>
-        public int Y { get;}
-        
+
+        public int Y { get; }
+
         /// <summary>
         /// Point number in matrix, if we have matrix for example [5,5] and we have point x=1 y=1 point number will be 6
         /// </summary>

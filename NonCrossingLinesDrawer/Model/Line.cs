@@ -1,24 +1,20 @@
 using System.Collections.Generic;
+using System.IO;
+using NonCrossingLinesDrawer.Abstractions;
+using NonCrossingLinesDrawer.Interfaces;
 
 namespace NonCrossingLinesDrawer
 {
-    public class Line
+    public class Line : PointPath,ILine
     {
-        public List<Point> Path { get;}
-
-        public Line()
-        {
-            Path = new List<Point>();
-        }
-
         public Line(List<Point> path)
         {
             Path = path;
         }
-
-        public void AddPointToPath(Point input)
+        
+        public Line(PointPath path)
         {
-            Path.Add(input);
+            Path = path.Path;
         }
     }
 }

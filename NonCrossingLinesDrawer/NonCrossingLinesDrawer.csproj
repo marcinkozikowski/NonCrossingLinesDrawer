@@ -54,20 +54,22 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Abstractions\PointPath.cs" />
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Constants\PointRelation.cs" />
+    <Compile Include="Interfaces\IAdjacencyMatrix.cs" />
+    <Compile Include="Interfaces\IBreadthPathFinder.cs" />
+    <Compile Include="Interfaces\ILine.cs" />
+    <Compile Include="Interfaces\IPath.cs" />
+    <Compile Include="Interfaces\IPoint.cs" />
     <Compile Include="Model\AdjacencyMatrix.cs" />
     <Compile Include="Model\BreadthPathFinder.cs" />
     <Compile Include="Model\Line.cs" />
     <Compile Include="Model\Point.cs" />
+    <Compile Include="Resources\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -101,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions" />
-    <Folder Include="Interfaces" />
     <Folder Include="Resources\" />
     <Folder Include="ViewModel" />
   </ItemGroup>
@@ -118,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Resources\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
