@@ -15,7 +15,7 @@ If there is no way to draw line beetwen selected points, user will get such infr
 
 ## Example video
 <div align="center">
-<a href="https://www.youtube.com/watch?v=EDCqrdFl9tA"><img src="https://img.youtube.com/vi/EDCqrdFl9tA/0.jpg" alt="NonCrossingLinesDrawer Example Video"></a>
+<a href="https://www.youtube.com/watch?v=NmgkusQysHs"><img src="https://img.youtube.com/vi/NmgkusQysHs/0.jpg" alt="NonCrossingLinesDrawer Example Video"></a>
 </div>
 
 ## Helpful pages
