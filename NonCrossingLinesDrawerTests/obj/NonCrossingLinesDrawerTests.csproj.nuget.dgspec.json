@@ -30,7 +30,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj": {
+                "projectPath": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -72,6 +76,17 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj",
+        "projectName": "NonCrossingLinesDrawer",
+        "projectPath": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj"
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

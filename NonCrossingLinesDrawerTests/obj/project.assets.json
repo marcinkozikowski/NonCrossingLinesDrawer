@@ -1225,6 +1225,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "NonCrossingLinesDrawer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/NonCrossingLinesDrawer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NonCrossingLinesDrawer.dll": {}
+        }
       }
     }
   },
@@ -4618,12 +4627,18 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "NonCrossingLinesDrawer/1.0.0": {
+      "type": "project",
+      "path": "../NonCrossingLinesDrawer/NonCrossingLinesDrawer.csproj",
+      "msbuildProject": "../NonCrossingLinesDrawer/NonCrossingLinesDrawer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
+      "NonCrossingLinesDrawer >= 1.0.0",
       "nunit >= 3.12.0"
     ]
   },
@@ -4657,7 +4672,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj": {
+              "projectPath": "C:\\Users\\marci\\Documents\\GitHub\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer\\NonCrossingLinesDrawer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

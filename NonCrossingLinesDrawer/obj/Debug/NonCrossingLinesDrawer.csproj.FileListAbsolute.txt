@@ -15,3 +15,4 @@ C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\ob
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\NonCrossingLinesDrawer.csproj.CoreCompileInputs.cache
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\NonCrossingLinesDrawer.exe
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\NonCrossingLinesDrawer.pdb
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\NonCrossingLinesDrawer.csprojAssemblyReference.cache

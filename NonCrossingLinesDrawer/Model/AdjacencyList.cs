@@ -4,7 +4,7 @@ using NonCrossingLinesDrawer.Interfaces;
 
 namespace NonCrossingLinesDrawer
 {
-    internal class AdjacencyList : IAdjacencyList
+    public class AdjacencyList : IAdjacencyList
     {
         private readonly Dictionary<int, ISet<Point>> _list;
         private readonly int _matrixSize;
