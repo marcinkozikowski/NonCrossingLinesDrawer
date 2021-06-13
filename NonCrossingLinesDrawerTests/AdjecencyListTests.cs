@@ -39,7 +39,7 @@ namespace NonCrossingLinesDrawerTests
         }
 
         [Test]
-        public void InMiddlePointHave4NeighoursTest()
+        public void MiddlePointHave4NeighoursTest()
         {
             Assert.AreEqual(4, list.List[6].Count);
         }
