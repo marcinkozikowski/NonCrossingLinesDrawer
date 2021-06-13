@@ -7,8 +7,49 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        Title="AboutWindow" Height="450" Width="800">
-    <Grid>
+        Title="AboutWindow" Height="450" Width="450">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Version: 1.0" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Copyright by Marcin Kozikowski" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Date of issue: June 2021r." TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+        <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Background="LightGray"></Separator>
+        <Separator Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Background="LightGray"></Separator>
+
+        <Label Content="NonCrossingLinesDrawer" FontSize="18" FontWeight="SemiBold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        <Image Source="/Resources/Icons/github.png" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" Margin="5"/>
+        <Label Content="Github" FontSize="18" FontWeight="SemiBold" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <Label  FontSize="14" FontWeight="SemiBold" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Hyperlink NavigateUri="https://github.com/marcinkozikowski/NonCrossingLinesDrawer" RequestNavigate="Hyperlink_RequestNavigate" >NonCrossingLinesDrawe project on GiHub</Hyperlink>
+        </Label>
+
+        <Image Source="/Resources/Icons/linkedin.png" Grid.Row="6" Grid.RowSpan="2" Grid.Column="0" Margin="5"/>
+        <Label Content="LinkedIn" FontSize="18" FontWeight="SemiBold" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <Label FontSize="14" FontWeight="SemiBold" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Hyperlink NavigateUri="https://pl.linkedin.com/in/marcin-kozikowski-32727b153" RequestNavigate="Hyperlink_RequestNavigate">
+                My LinkedIn account
+            </Hyperlink>
+        </Label>
         
     </Grid>
 </Window>

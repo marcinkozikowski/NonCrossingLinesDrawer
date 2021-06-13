@@ -112,6 +112,8 @@
     <Content Include="..\README.md">
       <Link>README.md</Link>
     </Content>
+    <Resource Include="Resources\Icons\github.png" />
+    <Resource Include="Resources\Icons\linkedin.png" />
     <Resource Include="close.ico" />
   </ItemGroup>
   <ItemGroup>

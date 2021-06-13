@@ -155,6 +155,7 @@ namespace NonCrossingLinesDrawer
         private void MenuItem_Click_About(object sender, RoutedEventArgs e)
         {
             AboutWindow aboutW = new AboutWindow();
+            aboutW.Owner = this;
             aboutW.ShowDialog();
         }
     }

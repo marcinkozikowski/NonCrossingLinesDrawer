@@ -15,7 +15,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="0">
+        <DockPanel Grid.Row="0" Height="20">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Clear" Click="MenuItem_Click_Clear" />
@@ -26,7 +26,6 @@
                     <MenuItem Header="_About" Click="MenuItem_Click_About"/>
                 </MenuItem>
             </Menu>
-            <TextBox AcceptsReturn="True" />
         </DockPanel>
 
         <GroupBox Grid.Row="1" Header="Drawing area" Margin="5" BorderThickness="3" BorderBrush="LightGray" FontSize="14" FontWeight="SemiBold">

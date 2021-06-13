@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace NonCrossingLinesDrawer.Views
         public AboutWindow()
         {
             InitializeComponent();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Hyperlink aboutUrlLink = (Hyperlink)sender;
+            Process.Start(new ProcessStartInfo(aboutUrlLink.NavigateUri.ToString()));
         }
     }
 }
