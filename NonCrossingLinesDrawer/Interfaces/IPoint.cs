@@ -11,5 +11,10 @@ namespace NonCrossingLinesDrawer.Interfaces
         /// Y coordinate stands for row in matrix
         /// </summary>
         int Y { get; }
+
+        /// <summary>
+        /// Point number in matrix
+        /// </summary>
+        int Number { get; }
     }
 }

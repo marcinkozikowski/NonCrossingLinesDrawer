@@ -59,18 +59,22 @@
     <Compile Include="Constants\PointRelation.cs" />
     <Compile Include="Exceptions\NoPathException.cs" />
     <Compile Include="Extensions\CanvasExtensions.cs" />
-    <Compile Include="Interfaces\IAdjacencyMatrix.cs" />
+    <Compile Include="Extensions\OtherExtensions.cs" />
+    <Compile Include="Interfaces\IAdjacencyList.cs" />
     <Compile Include="Interfaces\IBreadthPathFinder.cs" />
     <Compile Include="Interfaces\ILine.cs" />
     <Compile Include="Interfaces\IPath.cs" />
     <Compile Include="Interfaces\IPoint.cs" />
-    <Compile Include="Model\AdjacencyMatrix.cs" />
+    <Compile Include="Model\AdjacencyList.cs" />
     <Compile Include="Model\BreadthPathFinder.cs" />
     <Compile Include="Model\Line.cs" />
     <Compile Include="Model\Point.cs" />
     <Compile Include="Resources\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -111,6 +115,10 @@
     <Resource Include="close.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

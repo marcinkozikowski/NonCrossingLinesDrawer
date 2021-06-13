@@ -30,5 +30,22 @@ namespace NonCrossingLinesDrawer
         {
             Number = number;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Point point &&
+                   X == point.X &&
+                   Y == point.Y &&
+                   Number == point.Number;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 1887729291;
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
+            hashCode = hashCode * -1521134295 + Number.GetHashCode();
+            return hashCode;
+        }
     }
 }

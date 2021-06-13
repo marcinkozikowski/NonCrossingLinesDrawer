@@ -5,7 +5,7 @@ namespace NonCrossingLinesDrawer.Abstractions
 {
     public abstract class PointPath : IPath
     {
-        public List<Point> Path { get; set; }
+        public IList<Point> Path { get; set; }
 
         protected PointPath()
         {

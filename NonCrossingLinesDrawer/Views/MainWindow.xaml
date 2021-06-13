@@ -23,14 +23,14 @@
                     <MenuItem Header="_Exit" Click="MenuItem_Click_Exit" />
                 </MenuItem>
                 <MenuItem Header="_App">
-                    <MenuItem Header="_About" />
+                    <MenuItem Header="_About" Click="MenuItem_Click_About"/>
                 </MenuItem>
             </Menu>
             <TextBox AcceptsReturn="True" />
         </DockPanel>
 
         <GroupBox Grid.Row="1" Header="Drawing area" Margin="5" BorderThickness="3" BorderBrush="LightGray" FontSize="14" FontWeight="SemiBold">
-            <Grid Name="mainGrid" Cursor="Pen" SnapsToDevicePixels="True"/>
+            <Grid Name="drawingArea" Cursor="Pen" SnapsToDevicePixels="True"/>
         </GroupBox>
 
         <StatusBar Grid.Row="2" Background="LightGray" FontFamily="Courier New">

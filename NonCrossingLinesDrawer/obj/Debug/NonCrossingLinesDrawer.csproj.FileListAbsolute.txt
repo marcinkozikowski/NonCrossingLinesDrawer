@@ -14,3 +14,5 @@ C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\ob
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\NonCrossingLinesDrawer.csprojAssemblyReference.cache
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\Views\MainWindow.g.cs
 C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\Views\MainWindow.baml
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\Views\AboutWindow.g.cs
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Debug\Views\AboutWindow.baml
