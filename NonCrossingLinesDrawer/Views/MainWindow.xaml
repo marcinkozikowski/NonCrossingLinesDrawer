@@ -5,19 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NonCrossingLinesDrawer"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         FontFamily="Courier New"
         Title="NonCrossingLineDrawer" Height="800" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="0" Header="Drawing area" Margin="5" BorderThickness="3" BorderBrush="LightGray" FontSize="14" FontWeight="SemiBold">
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Clear" Click="MenuItem_Click_Clear" />
+                    <Separator />
+                    <MenuItem Header="_Exit" Click="MenuItem_Click_Exit" />
+                </MenuItem>
+                <MenuItem Header="_App">
+                    <MenuItem Header="_About" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
+        <GroupBox Grid.Row="1" Header="Drawing area" Margin="5" BorderThickness="3" BorderBrush="LightGray" FontSize="14" FontWeight="SemiBold">
             <Grid Name="mainGrid" Cursor="Pen" SnapsToDevicePixels="True"/>
         </GroupBox>
 
-        <StatusBar Grid.Row="1" Background="LightGray" FontFamily="Courier New">
+        <StatusBar Grid.Row="2" Background="LightGray" FontFamily="Courier New">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NonCrossingLinesDrawer.Exceptions;
 using NonCrossingLinesDrawer.Interfaces;
 using static NonCrossingLinesDrawer.PointRelation;
 
@@ -91,7 +92,7 @@ namespace NonCrossingLinesDrawer
                     return RecreatePathToPoint((int)_predecessors[destenationPoint][i], newPath);
                 }
             }
-            throw new ArgumentException("There is no path between points that dont cross existing lines");
+            throw new NoPathException(_startPointNumber,destenationPoint);
         }
 
         private void SetHelpers(int currentPointNumber, int neighbourPointNumber)

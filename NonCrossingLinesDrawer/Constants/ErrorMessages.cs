@@ -1,6 +1,6 @@
 namespace NonCrossingLinesDrawer
 {
-    public class ErrorMessages
+    public static class ErrorMessages
     {
         public static string CantDrawLine(int firstPoint, int secondPoint)
         {

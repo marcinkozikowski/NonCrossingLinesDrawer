@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NonCrossingLinesDrawer.Exceptions;
+using NonCrossingLinesDrawer.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -23,7 +25,6 @@ namespace NonCrossingLinesDrawer
             for(int i=0;i<size;i++)
             {
                 var row = new RowDefinition();
-
                 var column = new ColumnDefinition();
 
                 mainGrid.RowDefinitions.Add(row);
@@ -45,7 +46,7 @@ namespace NonCrossingLinesDrawer
             }
 
             pixelsAdjacency = new AdjacencyMatrix(size);
-            var matrix = pixelsAdjacency.Matrix;
+            //var matrix = pixelsAdjacency.Matrix;
 
             //rysowanie kolejnej linni wymaga nowego przeszukania bfs z nowym matrixem
         }
@@ -67,8 +68,8 @@ namespace NonCrossingLinesDrawer
                
                 Canvas _btn = sender as Canvas;
 
-                int _row = (int)_btn.GetValue(Grid.RowProperty);
-                int _column = (int)_btn.GetValue(Grid.ColumnProperty);
+                int _row = _btn.GetRowNumber();
+                int _column = _btn.GetColumnNumber();
 
                 firstPoint = _row * size + _column;
 
@@ -103,7 +104,7 @@ namespace NonCrossingLinesDrawer
                         var bfs2 = new BreadthPathFinder(firstPoint, pixelsAdjacency.Matrix);
                         bfs2.GetBFSPath();
                         var path2 = bfs2.RecreatePathToPoint(secondPoint, new List<int>());
-                        DrawLine(path2);
+                        DrawLine(path2,Colors.Black);
                         lineWidthLabel.Content = $"{path2.Count} points";
 
                         pixelsAdjacency.RemoveAdjacency(path2);
@@ -112,28 +113,39 @@ namespace NonCrossingLinesDrawer
                         firstPoint = -1;
                         selectedPoints = 0;
                     }
-                    catch (Exception exp)
+                    catch (NoPathException noPathExp)
                     {
-                        MessageBox.Show(ErrorMessages.CantDrawLine(firstPoint,secondPoint),"Can not draw line",MessageBoxButton.OK,MessageBoxImage.Information);
-                        selectedPoints = 0;
-                        firstPoint = -1;
-                        secondPoint = -1;
-
+                        MessageBox.Show(noPathExp.Message,"Can not draw line",MessageBoxButton.OK,MessageBoxImage.Information);
                         lineWidthLabel.Content = string.Empty;
                         lineColor.Background = new SolidColorBrush(Colors.Transparent);
                         firstPointLabel.Content = string.Empty;
                         secondPointLabel.Content = string.Empty;
                     }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Unidentified problem occured", "Can not draw line", MessageBoxButton.OK, MessageBoxImage.Error);
+                        lineWidthLabel.Content = string.Empty;
+                        lineColor.Background = new SolidColorBrush(Colors.Transparent);
+                        firstPointLabel.Content = string.Empty;
+                        secondPointLabel.Content = string.Empty;
+                    }
+                    finally
+                    {
+                        selectedPoints = 0;
+                        firstPoint = -1;
+                        secondPoint = -1;
+                    }
                 }
             }
         }
 
-        private void DrawLine(IEnumerable<int> linePath)
+        private void DrawLine(IEnumerable<int> path, Color lineColor2)
         {
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
             var color = Color.FromRgb((byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255), (byte)rnd.Next(1, 255));
             lineColor.Background = new SolidColorBrush(color);
-            foreach (var point in linePath)
+            
+            foreach (var point in path)
             {
                 int i = point % size;
                 int j = point / size;
@@ -142,6 +154,35 @@ namespace NonCrossingLinesDrawer
 
                 pixel.Background = new SolidColorBrush(color) ;
             }
+        }
+
+        private void MenuItem_Click_Clear(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are sure that you want to clear all drawn lines?", "Clear drawing area", MessageBoxButton.YesNo);
+            if(result == MessageBoxResult.Yes)
+            {
+                selectedPoints = 0;
+                firstPoint = -1;
+                secondPoint = -1;
+
+                lineWidthLabel.Content = string.Empty;
+                lineColor.Background = new SolidColorBrush(Colors.Transparent);
+                firstPointLabel.Content = string.Empty;
+                secondPointLabel.Content = string.Empty;
+
+                foreach(var gridCanvas in mainGrid.Children.OfType<Canvas>())
+                {
+                    gridCanvas.Background = new SolidColorBrush(Colors.White);
+                }
+
+                pixelsAdjacency = new AdjacencyMatrix(size);
+            }
+
+        }
+
+        private void MenuItem_Click_Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,0 +1,16 @@
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\bin\Release\NonCrossingLinesDrawer.exe.config
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\bin\Release\NonCrossingLinesDrawer.exe
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\bin\Release\NonCrossingLinesDrawer.pdb
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.csprojAssemblyReference.cache
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer_MarkupCompile.cache
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer_MarkupCompile.lref
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.g.resources
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.Properties.Resources.resources
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.csproj.GenerateResource.cache
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.csproj.CoreCompileInputs.cache
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.exe
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer.pdb
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\View\MainWindow.g.cs
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\Resources\App.g.cs
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\NonCrossingLinesDrawer_Content.g.cs
+C:\Users\marci\Documents\GitHub\NonCrossingLinesDrawer\NonCrossingLinesDrawer\obj\Release\View\MainWindow.baml
