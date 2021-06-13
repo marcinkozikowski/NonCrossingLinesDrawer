@@ -14,6 +14,12 @@ namespace NonCrossingLinesDrawerTests
         }
 
         [Test]
+        public void AdjacencyListNumberOfPointsTest()
+        {
+            Assert.AreEqual(25, list.List.Count);
+        }
+
+        [Test]
         public void AdjacencyListInitalizeTest()
         {
             Assert.NotNull(list.List);
